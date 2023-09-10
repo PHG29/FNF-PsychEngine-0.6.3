@@ -59,6 +59,7 @@ import Discord;
 
 #if android
 import android.Hardware;
+import SUtil;
 #end
 
 using StringTools;
@@ -2751,7 +2752,7 @@ class FunkinLua {
 				}
 			}
 			#end
-			return list;
+			return SUtil.getPath() + list;
 		});
 
 		call('onCreate', []);
