@@ -2743,6 +2743,7 @@ class FunkinLua {
 		
 		Lua_helper.add_callback(lua, "directoryFileList", function(folder:String) {
 			var list:Array<String> = [];
+			folder = SUtil.getPath() + folder;
 			#if sys
 			if(FileSystem.exists(folder)) {
 				for (folder in FileSystem.readDirectory(folder)) {
@@ -2752,7 +2753,7 @@ class FunkinLua {
 				}
 			}
 			#end
-			return SUtil.getPath() + list;
+			return list;
 		});
 
 		call('onCreate', []);
